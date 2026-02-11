@@ -1,6 +1,6 @@
 import dgram from "dgram";
 import getMac from "getmac";
-import internalIp from "internal-ip";
+import {internalIpV4Sync} from "internal-ip";
 
 import { Pilot as BulbPilot } from "../accessories/WizLight/pilot";
 import { Pilot as SocketPilot } from "../accessories/WizSocket/pilot";
@@ -13,7 +13,7 @@ function strMac() {
 }
 
 function strIp() {
-  return internalIp.v4.sync() ?? "0.0.0.0";
+  return internalIpV4Sync() ?? "0.0.0.0";
 }
 
 const BROADCAST_PORT = 38899;
